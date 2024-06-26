@@ -27,6 +27,18 @@ class _homeAppState extends State<homeApp> {
               color: Colors.white,
               fontSize: 30,
             ),
+          ),
+          const SizedBox(
+            height: 80,
+          ),
+          OutlinedButton.icon(
+            style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
+            onPressed: () {},
+            icon: const Icon(Icons.arrow_right_alt_outlined),
+            label: const Text(
+              "Start Quiz",
+              style: TextStyle(fontSize: 25),
+            ),
           )
         ],
       ),
