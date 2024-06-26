@@ -16,6 +16,7 @@ class _homeAppState extends State<homeApp> {
         children: [
           Image.asset(
             'assets/images/quiz-logo.png',
+            color: Colors.blue.shade200,
             width: 300,
           ),
           const SizedBox(
