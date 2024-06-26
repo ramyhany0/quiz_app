@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/home.dart';
 
 void main(List<String> args) {
-  runApp(QuizApp());
+  runApp(const QuizApp());
 }
 
 class QuizApp extends StatelessWidget {
@@ -15,8 +15,8 @@ class QuizApp extends StatelessWidget {
       home: Scaffold(
         body: Container(
             decoration: const BoxDecoration(
-                gradient:
-                    LinearGradient(colors: [Colors.blue, Colors.deepPurple])),
+                gradient: LinearGradient(
+                    colors: [Colors.orangeAccent, Colors.blueAccent])),
             child: const homeApp()),
       ),
     );
