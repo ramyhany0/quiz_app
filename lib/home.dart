@@ -33,7 +33,10 @@ class _homeAppState extends State<homeApp> {
             height: 80,
           ),
           OutlinedButton.icon(
-            style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
+            style: OutlinedButton.styleFrom(
+              foregroundColor: Colors.white,
+              backgroundColor: Colors.grey.shade800,
+            ),
             onPressed: () {},
             icon: const Icon(Icons.arrow_right_alt_outlined),
             label: const Text(
