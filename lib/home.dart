@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 
-class homeApp extends StatefulWidget {
-  const homeApp({super.key});
+class Home extends StatelessWidget {
+  Home(this.switchScreen, {super.key});
+  void Function() switchScreen;
 
-  @override
-  State<homeApp> createState() => _homeAppState();
-}
-
-class _homeAppState extends State<homeApp> {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -37,7 +33,7 @@ class _homeAppState extends State<homeApp> {
               foregroundColor: Colors.white,
               backgroundColor: Colors.grey.shade800,
             ),
-            onPressed: () {},
+            onPressed: switchScreen,
             icon: const Icon(Icons.arrow_right_alt_outlined),
             label: const Text(
               "Start Quiz",
