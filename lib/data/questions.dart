@@ -1,6 +1,6 @@
 import '../models/QuizQuestion.dart';
 
-List<QuizQuestion> questions = [
+const List<QuizQuestion> questions = [
   QuizQuestion("", []),
   QuizQuestion("", []),
   QuizQuestion("", []),
