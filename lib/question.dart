@@ -22,19 +22,19 @@ class _QuestionsState extends State<Question> {
           const SizedBox(
             height: 40,
           ),
-          AnswerButton("Answer 01", () {}),
+          AnswerButton(answerText: "Answer 01", onPressed: () {}),
           const SizedBox(
             height: 40,
           ),
-          AnswerButton("Answer 02", () {}),
+          AnswerButton(answerText: "Answer 01", onPressed: () {}),
           const SizedBox(
             height: 40,
           ),
-          AnswerButton("Answer 03", () {}),
+          AnswerButton(answerText: "Answer 01", onPressed: () {}),
           const SizedBox(
             height: 40,
           ),
-          AnswerButton("Answer 04", () {}),
+          AnswerButton(answerText: "Answer 01", onPressed: () {}),
         ],
       ),
     );
