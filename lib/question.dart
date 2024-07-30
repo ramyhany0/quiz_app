@@ -23,9 +23,7 @@ class _QuestionsState extends State<Question> {
         children: [
           Text(
             currenQuestion.text,
-            style: GoogleFonts.archivo(
-              fontSize: 20,
-            ),
+            style: GoogleFonts.chivo(fontSize: 20, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
           const SizedBox(

@@ -21,9 +21,9 @@ class Home extends StatelessWidget {
           ),
           Text(
             "Learn Flutter",
-            style: GoogleFonts.caveat(
+            style: GoogleFonts.handlee(
               color: Colors.white,
-              fontSize: 30,
+              fontSize: 40,
             ),
           ),
           const SizedBox(
