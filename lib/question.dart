@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/data/questions.dart';
 import 'package:quiz_app/models/answer_button.dart';
 
@@ -13,7 +14,8 @@ class _QuestionsState extends State<Question> {
   final currenQuestion = questions[0];
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      margin: const EdgeInsets.all(10),
       width: double.infinity,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -21,16 +23,17 @@ class _QuestionsState extends State<Question> {
         children: [
           Text(
             currenQuestion.text,
-            style: const TextStyle(fontSize: 20),
+            style:
+                GoogleFonts.archivo(fontSize: 20, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
           const SizedBox(
             height: 40,
           ),
-          ...currenQuestion.answer.map(
+          ...currenQuestion.getShuffledAnswer().map(
             (e) {
               return Container(
-                  margin: const EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(10),
                   child: AnswerButton(answerText: e, onPressed: () {}));
             },
           ),

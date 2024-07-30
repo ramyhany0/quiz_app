@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatelessWidget {
   const Home(this.switchScreen, {super.key});
@@ -18,9 +19,9 @@ class Home extends StatelessWidget {
           const SizedBox(
             height: 80,
           ),
-          const Text(
+          Text(
             "Learn Flutter",
-            style: TextStyle(
+            style: GoogleFonts.caveat(
               color: Colors.white,
               fontSize: 30,
             ),
