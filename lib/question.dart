@@ -17,9 +17,12 @@ class _QuestionsState extends State<Question> {
       width: double.infinity,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
             currenQuestion.text,
+            style: const TextStyle(fontSize: 20),
+            textAlign: TextAlign.center,
           ),
           const SizedBox(
             height: 40,
