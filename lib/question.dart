@@ -10,7 +10,7 @@ class Question extends StatefulWidget {
 }
 
 class _QuestionsState extends State<Question> {
-  final CurrenQuestion = questions[0];
+  final currenQuestion = questions[0];
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -19,24 +19,18 @@ class _QuestionsState extends State<Question> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            CurrenQuestion.text,
+            currenQuestion.text,
           ),
           const SizedBox(
             height: 40,
           ),
-          AnswerButton(answerText: "Answer 01", onPressed: () {}),
-          const SizedBox(
-            height: 40,
+          ...currenQuestion.answer.map(
+            (e) {
+              return Container(
+                  margin: const EdgeInsets.all(20),
+                  child: AnswerButton(answerText: e, onPressed: () {}));
+            },
           ),
-          AnswerButton(answerText: "Answer 01", onPressed: () {}),
-          const SizedBox(
-            height: 40,
-          ),
-          AnswerButton(answerText: "Answer 01", onPressed: () {}),
-          const SizedBox(
-            height: 40,
-          ),
-          AnswerButton(answerText: "Answer 01", onPressed: () {}),
         ],
       ),
     );
