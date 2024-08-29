@@ -27,7 +27,7 @@ class _QuizState extends State<Quiz> {
 
   void switchScreen() {
     setState(() {
-      activeScreen = const Question();
+      activeScreen = Question(chooseAnswer);
     });
   }
 

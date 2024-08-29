@@ -4,8 +4,11 @@ import 'package:quiz_app/data/questions.dart';
 import 'package:quiz_app/models/answer_button.dart';
 
 class Question extends StatefulWidget {
-  const Question({super.key, required this.onSelectedAnswers});
-  final void Function() onSelectedAnswers;
+  const Question(
+    this.onSelectedAnswer, {
+    super.key,
+  });
+  final void Function(String) onSelectedAnswer;
   @override
   State<Question> createState() => _QuestionsState();
 }
