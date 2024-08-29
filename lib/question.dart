@@ -12,6 +12,12 @@ class Question extends StatefulWidget {
 
 class _QuestionsState extends State<Question> {
   var currenQuestionIndex = 0;
+  void answerQuestion() {
+    setState(() {
+      currenQuestionIndex++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final currenQuestion = questions[currenQuestionIndex];
