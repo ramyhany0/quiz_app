@@ -48,10 +48,7 @@ class _QuestionsState extends State<Question> {
               return Container(
                   margin: const EdgeInsets.all(10),
                   child: AnswerButton(
-                      answerText: e,
-                      onPressed: () {
-                        answerQuestion(e);
-                      }));
+                      answerText: e, onPressed: () => answerQuestion(e)));
             },
           ),
         ],
