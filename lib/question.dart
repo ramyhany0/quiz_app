@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/data/questions.dart';
@@ -15,7 +17,9 @@ class Question extends StatefulWidget {
 
 class _QuestionsState extends State<Question> {
   var currenQuestionIndex = 0;
-  void answerQuestion() {
+  void answerQuestion(String answer) {
+    widget.onSelectedAnswer(answer);
+    log(answer);
     setState(() {
       currenQuestionIndex++;
     });
@@ -43,8 +47,11 @@ class _QuestionsState extends State<Question> {
             (e) {
               return Container(
                   margin: const EdgeInsets.all(10),
-                  child:
-                      AnswerButton(answerText: e, onPressed: answerQuestion));
+                  child: AnswerButton(
+                      answerText: e,
+                      onPressed: () {
+                        answerQuestion(e);
+                      }));
             },
           ),
         ],
