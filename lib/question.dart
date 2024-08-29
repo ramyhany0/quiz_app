@@ -11,9 +11,10 @@ class Question extends StatefulWidget {
 }
 
 class _QuestionsState extends State<Question> {
-  final currenQuestion = questions[0];
+  var currenQuestionIndex = 0;
   @override
   Widget build(BuildContext context) {
+    final currenQuestion = questions[currenQuestionIndex];
     return Container(
       margin: const EdgeInsets.all(10),
       width: double.infinity,
