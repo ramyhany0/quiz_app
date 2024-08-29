@@ -4,8 +4,8 @@ import 'package:quiz_app/data/questions.dart';
 import 'package:quiz_app/models/answer_button.dart';
 
 class Question extends StatefulWidget {
-  const Question({super.key});
-
+  const Question({super.key, required this.onSelectedAnswers});
+  final void Function() onSelectedAnswers;
   @override
   State<Question> createState() => _QuestionsState();
 }
@@ -40,7 +40,8 @@ class _QuestionsState extends State<Question> {
             (e) {
               return Container(
                   margin: const EdgeInsets.all(10),
-                  child: AnswerButton(answerText: e, onPressed: () {}));
+                  child:
+                      AnswerButton(answerText: e, onPressed: answerQuestion));
             },
           ),
         ],
