@@ -20,9 +20,9 @@ class _QuizState extends State<Quiz> {
   void chooseAnswer(String answer) {
     selectedAnswers.add(answer);
     if (selectedAnswers.length == questions.length) {
-      selectedAnswers = [];
       setState(() {
         activeScreen = Result(selectedAnswers);
+        selectedAnswers = [];
       });
     }
     log(selectedAnswers.toString());
