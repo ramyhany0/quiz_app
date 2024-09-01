@@ -40,18 +40,28 @@ class Result extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           const SizedBox(
-            height: 30,
+            height: 50,
           ),
           Summarypage(summaryData),
           const SizedBox(
-            height: 30,
+            height: 50,
           ),
           TextButton.icon(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.cyan),
+                foregroundColor: MaterialStateProperty.all(Colors.black),
+              ),
               onPressed: restart,
-              icon: const Icon(Icons.restart_alt_outlined),
+              icon: const Icon(
+                Icons.restart_alt_outlined,
+                size: 30,
+              ),
               label: const Text(
                 "Restart Quiz!",
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
               ))
         ],
       ),
