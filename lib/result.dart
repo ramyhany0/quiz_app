@@ -19,18 +19,27 @@ class Result extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var numofcorrectanswer = 0;
+    var summaryData = getSummaryData();
+    for (var i = 0; i < summaryData.length; i++) {
+      if (summaryData[i]['user_answer'] == summaryData[i]['correct_answer']) {
+        numofcorrectanswer++;
+      }
+    }
     return Container(
       margin: const EdgeInsets.all(20),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text(
-            "You Answer 3 out of 6 Questions Correctly!",
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+          Text(
+            "You Answer $numofcorrectanswer out of ${questions.length} Questions Correctly!",
+            style: TextStyle(
+              fontSize: 20,
+            ),
             textAlign: TextAlign.center,
           ),
           const SizedBox(
-            height: 30,
+            height: 20,
           ),
           ...getSummaryData().map((e) => Column(
                 children: [
@@ -38,7 +47,9 @@ class Result extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       CircleAvatar(
-                        backgroundColor: Colors.green.shade100,
+                        backgroundColor: e['user_answer'] == e['correct_answer']
+                            ? Colors.green.shade400
+                            : Colors.red.shade400,
                         radius: 16,
                         child:
                             Text(((e['question_index'] as int) + 1).toString()),
@@ -79,14 +90,14 @@ class Result extends StatelessWidget {
                 ],
               )),
           const SizedBox(
-            height: 30,
+            height: 20,
           ),
           TextButton.icon(
               onPressed: () {},
-              icon: const Icon(Icons.arrow_back_ios_new_rounded),
+              icon: const Icon(Icons.restart_alt_outlined),
               label: const Text(
                 "Restart Quiz!",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ))
         ],
