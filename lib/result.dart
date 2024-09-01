@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Result extends StatelessWidget {
-  const Result({super.key});
-
+  const Result(this.selectedAnswers, {super.key});
+  final List<String> selectedAnswers;
   @override
   Widget build(BuildContext context) {
     return Container(
