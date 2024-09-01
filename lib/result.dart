@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/questions.dart';
 
+import 'models/summaryPage.dart';
+
 class Result extends StatelessWidget {
-  const Result(this.selectedAnswers, {super.key});
+  const Result(this.selectedAnswers, this.restart, {super.key});
   final List<String> selectedAnswers;
+  final void Function() restart;
   List<Map<String, Object>> getSummaryData() {
     final List<Map<String, Object>> summary = [];
     for (var i = 0; i < selectedAnswers.length; i++) {
@@ -33,72 +36,22 @@ class Result extends StatelessWidget {
         children: [
           Text(
             "You Answer $numofcorrectanswer out of ${questions.length} Questions Correctly!",
-            style: TextStyle(
-              fontSize: 20,
-            ),
+            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
           const SizedBox(
-            height: 20,
+            height: 30,
           ),
-          ...getSummaryData().map((e) => Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: e['user_answer'] == e['correct_answer']
-                            ? Colors.green.shade400
-                            : Colors.red.shade400,
-                        radius: 16,
-                        child:
-                            Text(((e['question_index'] as int) + 1).toString()),
-                      ),
-                      const SizedBox(
-                        width: 15,
-                      ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              e['question'].toString(),
-                              style:
-                                  const TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            Text(
-                              e['user_answer'].toString(),
-                              style: const TextStyle(
-                                color: Colors.white,
-                              ),
-                            ),
-                            Text(
-                              e['correct_answer'].toString(),
-                              style: const TextStyle(color: Colors.greenAccent),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                ],
-              )),
+          Summarypage(summaryData),
           const SizedBox(
-            height: 20,
+            height: 30,
           ),
           TextButton.icon(
-              onPressed: () {},
+              onPressed: restart,
               icon: const Icon(Icons.restart_alt_outlined),
               label: const Text(
                 "Restart Quiz!",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
               ))
         ],
       ),
